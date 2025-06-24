@@ -1,6 +1,14 @@
-Fully Open Source Verilog-to-Bitstream flow for iCE40 FPGAs Contains Yosys, IceStorm (IcePack/IceUnpack, IceBox, IceProg, IceTime, IcePLL , IceMulti and IceBRAM tools), and nextpnr (Place & Route Tools) Make files Automates the flow from Synthesis, Place & Route (PnR), bitstream generation and device programming
+Fully Open Source Verilog-to-Bitstream flow for FPGAs contains Yosys, IceStorm (IcePack/IceUnpack, IceBox, IceProg, IceTime, IcePLL , IceMulti and IceBRAM tools), and nextpnr (Place & Route Tools) Make files Automates the flow from Synthesis, Place & Route (PnR), bitstream generation and device programming
 
-Target Board: ICE40 MDP (Mobile Development Platform)
+Example Design: Open source example design to run on the target patforms
+
+Target Devices:
+1. iCE40-UP5K
+more devices support coming soon...
+
+Target Platfroms: 
+1. ICE40 MDP (Mobile Development Platform)
+more platfroms coming soon...
 
 Tools used:
 * yosys [version: 0.33 (git sha1 2584903a060)]
