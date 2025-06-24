@@ -1,0 +1,33 @@
+# For the iCE40 UltraPlus (iCE40UP5K-UWG30) MDP Board - U3 (Sensor FPGA - C)
+
+
+# bank 0
+
+set_io LED_R B5
+set_io LED_G A5
+set_io LED_B C5
+set_io osc_clk B3
+set_io UART_RX A2
+set_io UART_TX A1
+
+
+# bank 1
+
+set_io SPI_SS C1
+set_io SPI_SCK D1
+set_io SPI_MOSI E1
+set_io SPI_MISO F1
+
+set_io PB_1 C3
+set_io SW_1 F4
+
+set_io LED_1 B1
+set_io LED_2 F2
+
+# bank 2
+
+set_io PB_2 E4
+set_io SW_2 E5
+
+set_io I2C_SDA D5
+set_io I2C_SCL F5

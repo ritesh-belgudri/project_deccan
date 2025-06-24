@@ -1,0 +1,3 @@
+[submodule "tools/icestorm"]
+	path = tools/icestorm
+	url = https://github.com/YosysHQ/icestorm.git
