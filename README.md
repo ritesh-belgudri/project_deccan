@@ -26,8 +26,8 @@ sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-d
 
 1. Icestorm
     ```
-    git clone https://gitea.iitdh.ac.in/EE24DP013/raigad_icestorm.git
-    cd raigad_icestorm/tools/icestorm
+    git clone https://github.com/rbelgudr/project_deccan.git
+    cd project_deccan/tools/icestorm
     make -j$(nproc)
     sudo make install
     ```
