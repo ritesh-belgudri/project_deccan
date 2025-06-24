@@ -43,7 +43,7 @@ sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-d
     ```
 
 
-References: 
+References: <br> 
 [1] https://prjicestorm.readthedocs.io/en/latest/overview.html <br>
 [2] https://yosyshq.readthedocs.io/projects/yosys/en/latest <br>
 [3] https://github.com/YosysHQ/nextpnr <br>
