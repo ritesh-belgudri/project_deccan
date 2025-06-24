@@ -48,5 +48,6 @@ References:
 [2] https://yosyshq.readthedocs.io/projects/yosys/en/latest/
 [3] https://github.com/YosysHQ/nextpnr
 
+About Project Deccan: This project is collection of open source tools and designs for various FPGAs devices and boards. This project aims to document the design flows for easily to use and learn fundamental of FPGA designs. 
 
-About Raigad Fort:  The project name is inspired by famous fort in India, refer to https://en.wikipedia.org/wiki/Raigad_Fort
+About Deccan Plateau: The project name is inspired by largest plateau in Indian peninsula, refer to https://en.wikipedia.org/wiki/Deccan_Plateau
