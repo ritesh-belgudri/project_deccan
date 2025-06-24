@@ -41,4 +41,4 @@ References:
 [3] https://github.com/YosysHQ/nextpnr
 
 
-About Raigad Fort: https://en.wikipedia.org/wiki/Raigad_Fort
+About Raigad Fort:  The project name is inspired by famous fort in India, refer to https://en.wikipedia.org/wiki/Raigad_Fort
