@@ -29,18 +29,18 @@ project_deccan
 ```
 
 ### Target Devices:
-1. iCE40-UP5K 
+1. iCE40-UP5K <br>
 more devices support coming soon...
 
 Target Platforms: 
-1. ICE40 MDP (Mobile Development Platform) 
+1. ICE40 MDP (Mobile Development Platform) <br>
 more platforms coming soon...
 
 ### Tools used:
 * yosys [version: 0.33 (git sha1 2584903a060)]
 * icestorm 
 * nextpnr-ice40 [Version 0.6-3build5]
-* verilator [for simulation]
+* verilator [Version 5.020]
 
 ## Tools Installation:
 
