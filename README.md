@@ -1,6 +1,21 @@
-Project Deccan: Open-Source Verilog-to-Bitstream Flow
+# Project Deccan: Open-Source tools for Verilog-to-Bitstream and Simulation flow
+Project Deccan Integrates together Yosys, IceStorm, and nextpnr into a seamless pipeline for various FPGAs. It automates synthesis, place-&-route, bitstream generation, device programming and simulation.
 
-Project Deccan ```
+## Features:
+- End-to-end flow: Verilog → JSON → ASC → BIT
+- Automatic build/ directory creation
+- Multi-design support via a single Makefile
+- Automated timing and resource utilization reporting integrated into build process
+- Verilator-based simulation flow with waveform generation
+- Customizable PCF injection, debug/release modes
+- Colorized terminal output for better user experience
+- Clean file naming without timestamps for consistent builds
+
+## Getting Started:
+
+### Directory Structure:
+The project directories are organized as below
+```
 project_deccan
 ├── designs                 // Contains example designs, Makefile
 │   ├── boards              // Contains board specific files (example: user guide, schematics, pinouts, etc...) 
@@ -11,33 +26,23 @@ project_deccan
 │   └── led_blink           // Example design directory: contains verilog sources, testbench 
 └── tools                   // Contains open source tools and scripts that are reqiured for running the flow
     └── icestorm            // open source tools for ICE40 FPGA (Project IceStorm) 
-```ogether Yosys, IceStorm, and nextpnr into a seamless pipeline for iCE40 FPGAs. It automates synthesis, place-&-route, bitstream generation, and device programming.
+```
 
-Features:
-- End-to-end flow: Verilog → JSON → ASC → BIT
-- Automatic build/ directory creation
-- Multi-design support via a single Makefile
-- Automated timing and resource utilization reporting integrated into build process
-- Verilator-based simulation flow with waveform generation
-- Customizable PCF injection, debug/release modes
-- Colorized terminal output for better user experience
-- Clean file naming without timestamps for consistent builds
-
-Target Devices:
-1. iCE40-UP5K <br>
+### Target Devices:
+1. iCE40-UP5K 
 more devices support coming soon...
 
 Target Platforms: 
-1. ICE40 MDP (Mobile Development Platform) <br>
+1. ICE40 MDP (Mobile Development Platform) 
 more platforms coming soon...
 
-Tools used:
+### Tools used:
 * yosys [version: 0.33 (git sha1 2584903a060)]
 * icestorm 
 * nextpnr-ice40 [Version 0.6-3build5]
 * verilator [for simulation]
 
-Installing tools:
+## Tools Installation:
 
 OS: Ubuntu 24.04 (tested on Window Subsystem for Linux - WSL)
 
@@ -76,22 +81,8 @@ sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-d
 
 Work in progress: Dockerfile to automate the tool and dependency installation
 
- 
-## Directory Structure:
-The project directories are organized as below
 
-```
-project_deccan
-├── designs                 // Contains example designs, Makefile
-│   ├── boards              // Contains board specific files (example: user guide, schematics, pinouts, etc...) 
-│   │   └── lattice         // FPGA vendor name
-│   │       └── ice40-mdp   // Target board name
-│   └── led_blink           // Example design directory: contains verilog sources, testbench 
-└── tools                   // Contains open source tools and scripts that are reqiured for running the flow
-    └── icestorm            // open source tools for ICE40 FPGA (Project IceStorm) 
-```
-
-Makefile Pipeline:
+## Makefile Pipeline:
 
 design.v
    │
@@ -108,7 +99,7 @@ icetime → timing.rpt
 icepack → design.bin
 
 
-Usage:
+### Usage:
 - Clone the repo and install dependencies.
 - Place your .v (and optionally .pcf) files under designs/.
 - Navigate to the designs directory: `cd designs`
