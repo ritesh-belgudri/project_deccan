@@ -81,24 +81,6 @@ sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-d
 
 Work in progress: Dockerfile to automate the tool and dependency installation
 
-
-## Makefile Pipeline:
-
-design.v
-   │
-   ▼
-yosys → design.json + utilization.rpt
-   │
-   ▼
-nextpnr-ice40 → design.asc
-   │
-   ▼
-icetime → timing.rpt
-   │
-   ▼
-icepack → design.bin
-
-
 ### Usage:
 - Clone the repo and install dependencies.
 - Place your .v (and optionally .pcf) files under designs/.
