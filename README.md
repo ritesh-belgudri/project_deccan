@@ -50,12 +50,16 @@ more platforms coming soon...
 
 ## Tools Installation:
 
-OS: Ubuntu 24.04 (tested on Window Subsystem for Linux - WSL)
+Operating System: Ubuntu 24.04 (tested on Window Subsystem for Linux - WSL)
+
+To Install WSL refer: [How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 Pre-requisite:
 ```    
 sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-dev libffi-dev git mercurial graphviz xdot pkg-config python3 libftdi-dev python3-dev libboost-all-dev cmake libeigen3-dev
 ```
+
+Install following tools using the commands given:
 
 1. Icestorm
     ```
@@ -85,9 +89,8 @@ sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-d
     sudo apt-get install gtkwave
     ```
 
-Work in progress: Dockerfile to automate the tool and dependency installation
-
-### Usage:
+## Tools Usage:
+### Build Flow:
 - Clone the repo and install dependencies.
 - Place your .v (and optionally .pcf) files under designs/.
 - Navigate to the designs directory: `cd designs`
@@ -96,7 +99,7 @@ Work in progress: Dockerfile to automate the tool and dependency installation
 - Program your device using the prog (SRAM) or prog_flash (SPI Flash) targets
 
 
-## Build Process:
+### Build Process:
 The Makefile implements a comprehensive build flow with integrated reporting and simulation:
 
 1. **Synthesis** (yosys): Converts Verilog to JSON netlist + generates utilization report
@@ -107,7 +110,7 @@ The Makefile implements a comprehensive build flow with integrated reporting and
 
 All reports are automatically generated during the build process, ensuring you always have current analysis data.
 
-## Available Make Targets:
+### Available Make Targets:
 - `make help` - Show available targets and usage examples
 - `make info` - Display build configuration
 - `make build` - Build the project (synthesis, place & route, bitstream)
@@ -122,7 +125,7 @@ All reports are automatically generated during the build process, ensuring you a
 - `make sim_clean` - Remove simulation directory
 - `make all` - Run info, build, and prog targets
 
-## Build Examples:
+### Build Examples:
 ```bash
 # Build default project (led_blink)
 make build
@@ -164,10 +167,10 @@ make clean
 make sim_clean
 ```
 
-## Design Analysis & Reporting:
+### Design Analysis & Reporting:
 Project Deccan automatically generates comprehensive design reports during the build process to help you analyze timing performance and resource utilization.
 
-### Report Types:
+#### Report Types:
 1. **Timing Report** (`*_timing.rpt`):
    - Critical path analysis with detailed gate-level timing breakdown
    - Maximum achievable frequency calculation
@@ -182,14 +185,14 @@ Project Deccan automatically generates comprehensive design reports during the b
    - I/O pin utilization
    - Carry chain analysis
 
-### Automatic Report Generation:
+#### Automatic Report Generation:
 Reports are automatically generated during `make build` and stored in the `build/` directory:
 - `build/{project_name}_timing.rpt` - Detailed timing analysis (generated using icetime)
 - `build/{project_name}_utilization.rpt` - Resource usage statistics (generated using yosys)
 
 The timing report is generated during the build process after place-and-route completion, ensuring you always have up-to-date timing information for your design.
 
-### Report Summary Output:
+#### Report Summary Output:
 When generating reports, the Makefile displays key metrics in the terminal:
 
 **Timing Summary Example:**
@@ -212,7 +215,7 @@ Total number of logic levels: 27
      SB_LUT4                        63
 ```
 
-### Report Generation Examples:
+#### Report Generation Examples:
 ```bash
 # Generate all reports for current project
 make reports
@@ -230,7 +233,7 @@ make util_report
 make reports MODE=debug
 ```
 
-### Understanding the Reports:
+#### Understanding the Reports:
 - **Timing Reports**: 
   - Generated using `icetime` tool for topological timing analysis during the build process
   - Provides detailed gate-level timing breakdown of critical paths
@@ -244,7 +247,7 @@ make reports MODE=debug
   - Include LUT, flip-flop, memory, and I/O utilization
 - **Debug vs Release**: Debug mode may use additional resources due to different synthesis options
 
-### Detailed Timing Analysis:
+#### Detailed Timing Analysis:
 The `icetime` tool provides comprehensive timing analysis including:
 - Gate-level timing breakdown (LogicCell40, InMux, LocalMux delays)
 - Carry chain timing analysis for arithmetic operations
@@ -262,23 +265,23 @@ The Makefile automatically integrates timing analysis into the build flow:
 
 This ensures that every build includes comprehensive timing and utilization analysis.
 
-## Simulation Flow:
+### Simulation Flow:
 Project Deccan includes a complete simulation flow using Verilator for functional verification of your designs.
 
-### Simulation Features:
+#### Simulation Features:
 - **Verilator-based simulation**: Fast, cycle-accurate simulation
 - **Automatic testbench compilation**: Seamless integration with Makefile
 - **Waveform generation**: VCD files for signal analysis
 - **GTKWave integration**: Automatic waveform viewer launch
 - **Project-specific simulation**: Support for multiple designs
 
-### Simulation Process:
+#### Simulation Process:
 1. **Testbench Creation**: Write `*_tb.v` testbench files in your design directory
 2. **Compilation**: Verilator compiles the design and testbench
 3. **Execution**: Simulation runs and generates VCD waveform files
 4. **Analysis**: View waveforms in GTKWave or other VCD viewers
 
-### Simulation Examples:
+#### Simulation Examples:
 ```bash
 # Run simulation for led_blink design
 make sim PROJ_NAME=led_blink
@@ -290,18 +293,18 @@ make sim_wave PROJ_NAME=led_blink
 make sim_clean
 ```
 
-### Simulation Output:
+#### Simulation Output:
 - `sim/{project_name}_sim` - Compiled simulation executable
 - `sim/{project_name}.vcd` - VCD waveform file
 - `sim/obj_dir/` - Verilator compilation artifacts
 
-### Testbench Requirements:
+#### Testbench Requirements:
 - Design must include a C++ simulation wrapper: `{project_name}_sim.cpp`
 - Wrapper handles clock generation, reset sequencing, and VCD generation
 - VCD files can be viewed with GTKWave or other waveform viewers
 - Simulation provides functional verification of the design logic
 
-### Verilator Installation:
+#### Verilator Installation:
 Verilator is a fast cycle-accurate simulator that converts Verilog to C++ for high-performance simulation.
 
 **Installation:**
@@ -337,7 +340,7 @@ Total cycles: 11020
 Final LED state: 0
 ```
 
-References: <br> 
+## References: 
 [1] https://prjicestorm.readthedocs.io/en/latest/overview.html <br>
 [2] https://yosyshq.readthedocs.io/projects/yosys/en/latest <br>
 [3] https://github.com/YosysHQ/nextpnr <br>
