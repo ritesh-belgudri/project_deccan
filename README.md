@@ -256,15 +256,6 @@ The `icetime` tool provides comprehensive timing analysis including:
 - Accurate frequency calculations based on physical delays
 - Integrated into the build process for automatic timing verification
 
-### Build Process Integration:
-The Makefile automatically integrates timing analysis into the build flow:
-1. **Synthesis**: Yosys generates utilization statistics
-2. **Place & Route**: nextpnr-ice40 performs placement and routing
-3. **Timing Analysis**: icetime analyzes the placed and routed design
-4. **Bitstream Generation**: icepack creates the final bitstream
-
-This ensures that every build includes comprehensive timing and utilization analysis.
-
 ### Simulation Flow:
 Project Deccan includes a complete simulation flow using Verilator for functional verification of your designs.
 
