@@ -1,5 +1,11 @@
-# Project Deccan: Open-Source tools for Verilog-to-Bitstream and Simulation flow
-Project Deccan Integrates together Yosys, IceStorm, and nextpnr into a seamless pipeline for various FPGAs. It automates synthesis, place-&-route, bitstream generation, device programming and simulation.
+# Project Deccan: Unified Open-Source FPGA Framework for Verilog-to-Bitstream Generation, Simulation and Debug Utilities
+
+## Introduction
+Project Deccan integrates together Yosys, nextpnr, Icestrom and Verilator tools into a seamless pipeline for FPGAs. It automates synthesis, place-&-route, bitstream generation, device programming and simulation flows. This project also aims to document open source FPGA design flow for easily of use and to enable learning of FPGA designs & their fundamentals. 
+
+This project work is carried out at FutureG Networks Lab, Indian Institute of Technology, Dharwad. Supported by MEITY's C2S program and hardware donations by Lattice Semiconductor.
+
+The project name [Deccan Plateau](https://en.wikipedia.org/wiki/Deccan_Plateau) is inspired by largest plateau in Indian peninsula.
 
 ## Features:
 - End-to-end flow: Verilog → JSON → ASC → BIT
@@ -85,7 +91,10 @@ Work in progress: Dockerfile to automate the tool and dependency installation
 - Clone the repo and install dependencies.
 - Place your .v (and optionally .pcf) files under designs/.
 - Navigate to the designs directory: `cd designs`
-- Run one of the available make targets:
+- Run one of the available make targets
+- Find .bin files in build/ directory (named as {project_name}.bin)
+- Program your device using the prog (SRAM) or prog_flash (SPI Flash) targets
+
 
 ## Build Process:
 The Makefile implements a comprehensive build flow with integrated reporting and simulation:
@@ -328,17 +337,8 @@ Total cycles: 11020
 Final LED state: 0
 ```
 
-- Find .bin files in build/ directory (named as {project_name}.bin)
-- Program your device using the prog or prog_flash targets
-
-
 References: <br> 
 [1] https://prjicestorm.readthedocs.io/en/latest/overview.html <br>
 [2] https://yosyshq.readthedocs.io/projects/yosys/en/latest <br>
 [3] https://github.com/YosysHQ/nextpnr <br>
 [4] https://www.veripool.org/verilator/<br>
-
-About Project Deccan: This project is collection of open source tools and designs for various FPGAs devices and boards. This project aims to document the design flows for easily to use and learn fundamental of FPGA designs. 
-
-About Deccan Plateau: The project name is inspired by largest plateau in Indian peninsula, refer to https://en.wikipedia.org/wiki/Deccan_Plateau
-
