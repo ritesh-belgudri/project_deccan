@@ -63,7 +63,7 @@ Install following tools using the commands given:
 
 1. Icestorm
     ```
-    git clone --recurse-submodules https://github.com/rbelgudr/project_deccan.git
+    git clone --recurse-submodules https://github.com/ritesh-belgudri/project_deccan.git
     cd project_deccan/tools/icestorm
     make -j$(nproc)
     sudo make install
