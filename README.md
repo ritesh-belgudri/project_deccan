@@ -342,3 +342,6 @@ References: <br>
 [2] https://yosyshq.readthedocs.io/projects/yosys/en/latest <br>
 [3] https://github.com/YosysHQ/nextpnr <br>
 [4] https://www.veripool.org/verilator/<br>
+
+## Contact:
+For any queries, feel free to reach us at: ritesh.belgudri@iitdh.ac.in
