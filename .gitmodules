@@ -1,3 +1,6 @@
 [submodule "tools/icestorm"]
 	path = tools/icestorm
 	url = https://github.com/YosysHQ/icestorm.git
+[submodule "tools/yosys"]
+	path = tools/yosys
+	url = https://github.com/YosysHQ/yosys.git
